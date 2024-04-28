@@ -1,8 +1,4 @@
-# approximations for various mathematical processes
-
-# Decided to use vim in my WSL terminal with no code
-# completion to challenge myself
-
+# approximations for sin(x)
 # Ishaan Takrani
 
 
@@ -28,10 +24,10 @@ def factorial(x):
     return fac
 
 
-def sin(x,n=20):
+def taylor_sin(x,n=20):
 
     '''
-    Approximates sin(x), accurate to 8 decimal places at x = 5000 using Taylor series expansion
+    Approximates sin(x), accurate to 8 decimal places at x = 5000 using a Taylor series expansion
 
     Args:
         x (int/float): x at which sin(x) is to be calculated
@@ -66,4 +62,15 @@ def sin(x,n=20):
         sinx += (num/den) * x**((2*i) + 1)
 
     return sinx
+
+
+
+def  
+
+
+
+for i in range(8):
+    print(f"approx. sin({i}): {sin(i)}")
+
+
 
