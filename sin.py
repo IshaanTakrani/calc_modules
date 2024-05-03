@@ -64,13 +64,3 @@ def taylor_sin(x,n=20):
     return sinx
 
 
-
-def  
-
-
-
-for i in range(8):
-    print(f"approx. sin({i}): {sin(i)}")
-
-
-
