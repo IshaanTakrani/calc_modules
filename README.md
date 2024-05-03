@@ -1,2 +1,3 @@
 # ishaan_math_python
-Some math functions
+Includes:
+- Approximations for sin(x)
