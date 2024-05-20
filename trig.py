@@ -66,9 +66,20 @@ def taylor_sin(x,n=20, mode="rad"):
         sinx += (num/den) * x**((2*i) + 1)
 
     return sinx
+
+
+
+def bhaskara_sin(x, mode="rad"):
+
+    if(mode == "rad"):
+        x = x * (180/3.141592653589793238)
+    
+    
+    sinx = (4*x * (180-x)) / (40500 - x*(180-x))
+    return sinx
+
+
     
 
-
-    
-
-print(taylor_sin(0.78, mode="deg"))
+print(taylor_sin(1.5, mode="rad"))
+print(bhaskara_sin(1.5, mode = "rad"))
