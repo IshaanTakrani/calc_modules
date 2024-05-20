@@ -25,9 +25,9 @@ def factorial(x):
 
 
 def taylor_sin(x,n=20, mode="rad"):
-
     '''
     Approximates sin(x), accurate to 8 decimal places at x = 5000 using a Taylor series expansion
+    IDEAL range: 0-2pi radians (0-360 degrees)
 
     Args:
         x (float): x at which sin(x) is to be calculated
@@ -69,17 +69,45 @@ def taylor_sin(x,n=20, mode="rad"):
 
 
 
-def bhaskara_sin(x, mode="rad"):
+def bhaskara_sin(x, mode):
+    '''
+    Approximates sin(x) using Bhaskara's approximation for sin(x)
+    RESTRICTED range: 0-180 degrees (0-pi radians)
+
+    Args:
+        x (float): x at which sin(x) is to be calculated
+        mode (string): mode, "deg" for degrees or "rad" for radians
+
+    Returns:
+        sinx (float): approximation of sin(x)
+        
+    Time complexity:
+        Worst case: O(1)
+        Best case: O(1)
+
+    '''
+
+    sinx = 0
 
     if(mode == "rad"):
         x = x * (180/3.141592653589793238)
+        print(f"X: {x}")
+
+    if(x > 6.283185307179586):
+        while(x > 6.283185307179586):
+            x -= 6.283185307179586
+    print(f"X: {x}")
+
+    if(x < 3.141592653589793238):
+        sinx = (4*x * (180-x)) / (40500 - x*(180-x))
     
-    
-    sinx = (4*x * (180-x)) / (40500 - x*(180-x))
+    # else:
+    #     x = x - 3.141592653589793238
+    #     sinx = -(4*x * (180-x)) / (40500 - x*(180-x))
+
     return sinx
 
 
-    
-
-print(taylor_sin(1.5, mode="rad"))
-print(bhaskara_sin(1.5, mode = "rad"))
+x = 2
+print(taylor_sin(x, mode="rad"))
+print(bhaskara_sin(x, mode = "rad"))
