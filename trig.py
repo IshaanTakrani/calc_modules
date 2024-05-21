@@ -56,11 +56,6 @@ def taylor_sin(x, mode,n=20):
             fac = fac * i
         return fac
 
- 
-    # subtract (approximate) period from x, to avoid overflow
-    # if(x > 6.283185307179586):
-    #     while(x > 6.283185307179586):
-    #         x -= 6.283185307179586
     x = x % 6.283185307179586
 
     sinx = 0
