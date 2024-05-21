@@ -1,6 +1,5 @@
-# approximations for sin(x)
+# approximations for trigonometric functions
 # Ishaan Takrani
-
 
 def factorial(x):
     '''
@@ -48,7 +47,7 @@ def taylor_sin(x, mode,n=20):
         return ValueError("Mode must be either 'deg' for degrees or 'rad' for radians")
 
     if(mode == "deg"):
-        x = x/(180/3.141592653589793)
+        x = x/(180/3.141592653589793238)
 
     def factorial(x):
         fac = 1
@@ -101,5 +100,11 @@ def bhaskara_sin(x, mode):
     return sinx
 
 
+def table_sin(x,mode):
+    f = open("sin_table_degrees.txt", "r")
+    # print(f.read())
+    sin_table_degrees = dict(f.read)
+    print(sin_table_degrees[3.5])
 
 
+table_sin(4,"rad")
