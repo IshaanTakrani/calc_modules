@@ -106,10 +106,5 @@ def bhaskara_sin(x, mode):
     return sinx
 
 
-x = -200
-mode = "deg"
-print(taylor_sin(x, mode))
-print(bhaskara_sin(x, mode))
-
 
 
