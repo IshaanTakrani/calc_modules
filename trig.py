@@ -25,7 +25,7 @@ def factorial(x):
 
 def taylor_sin(x, mode,n=20):
     '''
-    Approximates sin(x), accurate to 8 decimal places at x = 5000 using a Taylor series expansion
+    Approximates sin(x) using a Taylor series expansion
     IDEAL range: 0-2pi radians (0-360 degrees)
 
     Args:
@@ -44,7 +44,7 @@ def taylor_sin(x, mode,n=20):
     '''
 
     if (mode not in ['deg','rad']):
-        return ValueError("Mode must be either 'deg' for degrees or 'rad' for radians")
+        return ValueError("Error: Mode must be either 'deg' for degrees or 'rad' for radians for taylor_sin")
 
     if(mode == "deg"):
         x = x/(180/3.141592653589793238)
@@ -84,7 +84,7 @@ def bhaskara_sin(x, mode):
     '''
 
     if (mode not in ['deg', 'rad']):
-        return ValueError("Mode must be either 'deg' for degrees or 'rad' for radians")
+        return ValueError("Mode must be either 'deg' for degrees or 'rad' for radians for bhaskara_sin")
 
     if mode == "rad":
         x = x*(180/3.141592653589793238)
@@ -98,13 +98,3 @@ def bhaskara_sin(x, mode):
         sinx = -(4 * x * (180 - x)) / (40500 - x * (180 - x))
     
     return sinx
-
-
-def table_sin(x,mode):
-    f = open("sin_table_degrees.txt", "r")
-    # print(f.read())
-    sin_table_degrees = dict(f.read)
-    print(sin_table_degrees[3.5])
-
-
-table_sin(4,"rad")
